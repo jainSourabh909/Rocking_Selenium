@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 import pytest
 from win32api import GetSystemMetrics
-
+import wx
 
 @pytest.fixture
 def driver_session():
@@ -34,6 +34,24 @@ def test_open_url_verify_title(driver_session):
     # assert "Login - VWO"==driver_session.title
     # below is the another way to assert
     assert "Login - VWO" in driver_session.title
+
+@pytest.mark.cxpython
+def test_find_screen_size_through_wxpython():
+    ## Create a Session
+    print("\nStart")
+    driver = webdriver.Chrome()
+    driver.get("https://app.vwo.com")
+    ### adding sleep to see the small size
+    time.sleep(1)
+    # creating application object
+    app1 = wx.App()
+    screenxy = wx.GetDisplaySize()  # returns a tuple
+    print("\nsystem_size-->",screenxy)
+    driver.set_window_size(screenxy[0], screenxy[1])
+    ### adding sleep to see the big size
+    time.sleep(1)
+    assert True
     # Close the driver
-    driver_session.quit()
+    driver.quit()
     print("End")
+#
