@@ -4,6 +4,13 @@ import pytest
 from win32api import GetSystemMetrics
 import wx
 
+'''
+if we wanna run all testcase--> pytest -v   ==(v=virbose)
+if we wanna run pattern match testcase--> pytest -k "add" -v  ==(match_pattern = add)
+if we wanna mark our test case--> @pytest.mark.positive  ==(mark_name=positive)
+if we wanna run mark test case-->pytest -m "positive" -v -s (-s=print the output)
+'''
+
 @pytest.fixture
 def driver_session():
     ## Create a Session
