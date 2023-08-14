@@ -12,5 +12,11 @@
 3. Create a folder Practice
 4. Create a Selenium_Practice01.py file write some get url code.
 5. Create a test_Selenium_Practice02.py file write some functions to get url.
-6. install a package **pypiwin32** package to get system width anmd height.(`import-->from win32api import GetSystemMetrics`)
-7. 
+6. install a package **pypiwin32** package to get system width and height.(`import-->from win32api import GetSystemMetrics`)
+
+
+### Pytest Commands
+1. if we want to run all testcase--> `pytest -v`   ==(v=virbose)
+2. if we want to run pattern match testcase--> `pytest -k "add" -v`  ==(match_pattern = add)
+3. if we want to mark our test case--> `@pytest.mark.positive`  ==(mark_name=positive)
+4. if we want to run mark test case--> `pytest -m "positive" -v -s` (-s=print the output)
