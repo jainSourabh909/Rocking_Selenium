@@ -16,6 +16,7 @@ def test_awsome_qa_xpath_testing():
     ##### maximize the window
     driver.maximize_window()
     #### navigate to url
+
     driver.get("https://awesomeqa.com/xpath/")
     #### click on text=Make Appointment, by using link text
     mammal_animal = driver.find_element(By.XPATH, "//div[@class='Mammal']/h4").text
