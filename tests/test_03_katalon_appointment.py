@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import Select
 
 '''
 pytest .\test_03_katalon_appointment.py -v -s --html=report.html
+console_xpath_for_make_app=$x("//a[@id='btn-make-appointment']")
 '''
 
 def test_negative_kataloon_apointment():
@@ -48,6 +49,7 @@ def test_positive_kataloon_apointment():
     #### click on text=Make Appointment, by using link text
     link_text = driver.find_element(By.LINK_TEXT, "Make Appointment")
     link_text.click()
+    "//a[@id='btn-make-appointment']"
 
     username = driver.find_element(By.ID,"txt-username")
     username.send_keys("John Doe")
